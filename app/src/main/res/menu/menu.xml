@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/fun_inject_key"
+        android:title="@string/function_inject_key"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/fun_key_enc"
+        android:title="@string/function_key_enc"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/fun_RSA_key"
+        android:title="@string/function_rsa"
+        app:showAsAction="never" />
+</menu>

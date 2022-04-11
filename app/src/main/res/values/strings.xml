@@ -1,0 +1,65 @@
+<resources>
+    <string name="app_name">KeyInject</string>
+
+    <string name="key_sys_label">Key Type: </string>
+
+    <string name="source_kid">TMK Index: </string>
+    <string name="desc_kid">Key Index: </string>
+    <string name="inject">inject</string>
+    <string name="injecting">injecting…</string>
+    <string name="enc">ENCRYPTION</string>
+    <string name="key_injected_view_cipher_dest_key">Encrypted By TMK: </string>
+    <string name="function_inject_key">Key Injection</string>
+    <string name="function_key_enc">Encryption &amp; Decryption Test</string>
+    <string name="function_rsa">RSA Test</string>
+    <string name="dukpt">Work In DUKPT Mode: </string>
+    <string name="tak">TAK(MODE0)</string>
+    <string name="tdk">TDK(ECB)</string>
+    <string name="tpk">TPK(ISO9564–0)</string>
+    <string name="inc_ksn">Increase KSN</string>
+    <string name="dukpt_pin">PIN(ISO9564–0)</string>
+    <string name="dukpt_mac">MAC(MODE0)</string>
+    <string name="dukpt_des">DES(CBC)</string>
+    <string name="plaintext">Input(Plaintext): </string>
+    <string name="cipher_text">Output(Ciphertext): </string>
+    <string name="input_text">Input(Plaintext): </string>
+    <string name="input_text_label_val">0 padded left</string>
+    <string name="output_cipher_text">Output(Ciphertext): </string>
+    <string name="output_text">Output(Plaintext): </string>
+    <string name="public_key_index">Public Key Index(Encryption):</string>
+    <string name="private_key_index">Private Key Index(Decryption):</string>
+    <string name="used_key_index">Key Index: </string>
+    <string name="current_used_ksn">Current KSN: </string>
+    <string name="next_used_ksn">Next KSN: </string>
+    <string name="decode_text">DECODE TEXT</string>
+    <string name="rsa_enc_dec">RSA Test</string>
+    <string name="rsa_dec">Decryption</string>
+    <string name="mpos_key_index">MPOS KEY INDEX:</string>
+    <string name="init_data">1111111111111111</string>
+    <string name="input_hex_string">please input hex String</string>
+    <string name="dukpt_des_data">343031323334353637383930394439383700000000000000</string>
+    <string name="init_pin_data">123456789012345678</string>
+    <string name="tmk_index_hint">1~100</string>
+    <string name="twk_index_hint">1~100</string>
+    <string name="dukpt_index_hint">1~40</string>
+    <string name="rsa_index_hint">1~10</string>
+
+
+    <string name="TMK_SYS">TMK</string>
+    <string name="TWK_SYS">TPK/TDK/TAK</string>
+    <string name="DUKPT_SYS">DUKPT</string>
+    <string name="RSA_SYS">RSA</string>
+    <string-array name="key_sys_array">
+        <item>@string/TMK_SYS</item>
+        <item>@string/TWK_SYS</item>
+        <item>@string/DUKPT_SYS</item>
+        <item>@string/RSA_SYS</item>
+    </string-array>
+
+    <string name="printer_name_sn">SN: </string>
+    <string name="printer_name_date">Date: </string>
+    <string name="printer_name_tmk_kcv">TMK KCV: </string>
+    <string name="printer_name_time">Time: </string>
+    <string name="printer_name_operator1">Operator1: </string>
+    <string name="printer_name_operator2">Operator2: </string>
+</resources>

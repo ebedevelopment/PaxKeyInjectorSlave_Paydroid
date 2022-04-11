@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="10dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="5dp"
+            android:text="@string/public_key_index"
+            android:textAllCaps="false"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/et_rsa_public_index"
+            style="@style/et_style" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="5dp"
+            android:text="@string/private_key_index"
+            android:textAllCaps="false"
+            android:textSize="15sp" />
+
+        <EditText
+            android:id="@+id/et_rsa_private_index"
+            style="@style/et_style" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/plain_label_tag"
+            style="@style/tv_style"
+            android:text="@string/input_text" />
+        <TextView
+            android:id="@+id/plain_label_val"
+            style="@style/tv_style"
+            tools:text="2048 bits"/>
+    </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/rsa_input_data"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:background="@drawable/bg_rect"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:text="@string/init_data" />
+
+    <TextView
+        style="@style/tv_style"
+        android:layout_marginTop="10dp"
+        android:text="@string/output_cipher_text" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:background="@drawable/bg_rect"
+        android:fadingEdge="vertical"
+        android:scrollbars="vertical">
+
+        <TextView
+            android:id="@+id/rsa_output_cipher_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:textSize="18sp" />
+    </ScrollView>
+
+    <TextView
+        style="@style/tv_style"
+        android:layout_marginTop="10dp"
+        android:text="@string/output_text" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:background="@drawable/bg_rect"
+        android:fadingEdge="vertical"
+        android:scrollbars="vertical">
+
+        <TextView
+            android:id="@+id/rsa_output_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:textSize="18sp" />
+    </ScrollView>
+
+    <Button
+        android:id="@+id/bt_rsa_enc_dec"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/rsa_enc_dec"
+        android:textAllCaps="false" />
+
+</LinearLayout>

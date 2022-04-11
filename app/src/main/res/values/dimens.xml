@@ -1,0 +1,15 @@
+<resources>
+    <!-- inject_receipt -->
+    <dimen name="printer_inject_receipt_bottom_step">100dp</dimen>
+    <dimen name="printer_inject_receipt_margin_16dp">16dp</dimen>
+    <dimen name="printer_inject_receipt_name_48sp">48sp</dimen>
+    <dimen name="printer_inject_receipt_ct_48sp">48sp</dimen>
+    <dimen name="printer_inject_receipt_name_32sp">32sp</dimen>
+    <dimen name="printer_inject_receipt_ct_32sp">32sp</dimen>
+    <dimen name="printer_inject_receipt_name_24sp">24sp</dimen>
+    <dimen name="printer_inject_receipt_ct_24sp">24sp</dimen>
+    <dimen name="printer_inject_receipt_name_16sp">16sp</dimen>
+    <dimen name="printer_inject_receipt_ct_16sp">16sp</dimen>
+    <dimen name="printer_inject_receipt_name_10sp">10sp</dimen>
+    <dimen name="printer_inject_receipt_ct_10sp">10sp</dimen>
+</resources>

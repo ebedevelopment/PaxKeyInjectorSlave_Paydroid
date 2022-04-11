@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginEnd="5dp"
+            android:text="@string/key_sys_label"
+            android:textSize="18sp" />
+        <!--15sp-->
+
+        <Spinner
+            android:id="@+id/spinner_key_sys_selector"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:dropDownWidth="wrap_content"
+            android:dropDownSelector="@color/gray"
+            android:gravity="center_horizontal"
+            android:spinnerMode="dropdown"
+            tools:entries="@array/key_sys_array" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_encrypted_injection_check"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginEnd="5dp"
+            android:text="@string/key_injected_view_cipher_dest_key"
+            android:textSize="18sp" />
+        <!--15sp-->
+
+        <CheckBox
+            android:id="@+id/cb_enc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginStart="0dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_source"
+        style="@style/ll_style"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:id="@+id/txt_src_label"
+            style="@style/tv_style"
+            android:layout_gravity="bottom"
+            android:text="@string/source_kid" />
+
+        <EditText
+            android:id="@+id/et_source_kid"
+            style="@style/et_style"
+            android:layout_gravity="bottom|center_horizontal"
+            android:hint="@string/tmk_index_hint"
+            tools:ignore="LabelFor" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_desc"
+        style="@style/ll_style">
+
+        <TextView
+            android:id="@+id/txt_dest_label"
+            style="@style/tv_style"
+            android:layout_gravity="bottom"
+            android:text="@string/desc_kid" />
+
+        <EditText
+            android:id="@+id/et_desc_kid"
+            style="@style/et_style"
+            android:layout_gravity="bottom|center_horizontal"
+            android:hint="@string/tmk_index_hint"
+            tools:ignore="LabelFor" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_inject"
+        style="@style/bt_style"
+        android:layout_marginTop="20dp"/>
+</LinearLayout>

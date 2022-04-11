@@ -1,0 +1,70 @@
+apply plugin: 'com.android.library'
+
+def static releaseTime() {
+    return new Date().format("yyyyMMdd", TimeZone.getTimeZone("UTC"))
+}
+
+def SDK_BASENAME = "KeyInject"
+def SDK_VERSION = "_V1.00.03_" + releaseTime()
+def sdkDestinationPath = "build/libs/"
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName SDK_BASENAME + SDK_VERSION
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs = ['src/main/java']
+
+//            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+    compileOnly fileTree(include: ['*.jar'], dir: 'libs')
+
+    testImplementation rootProject.ext.test_implementation
+    androidTestImplementation rootProject.ext.android_test_runner
+    androidTestImplementation rootProject.ext.android_test_espresso
+    implementation rootProject.ext.support_v7
+}
+
+task deleteBuild(type: Delete) {
+    delete sdkDestinationPath + SDK_BASENAME + SDK_VERSION + ".jar"
+}
+
+task makeJar(type: Copy) {
+    from('build/intermediates/aar_main_jar/release/')
+    into sdkDestinationPath
+    include('classes.jar')
+    rename('classes.jar',SDK_BASENAME + SDK_VERSION + ".jar")
+}
+
+makeJar.dependsOn(build)

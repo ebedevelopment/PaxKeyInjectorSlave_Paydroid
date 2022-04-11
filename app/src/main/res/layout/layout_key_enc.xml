@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="10dp"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/dukpt"
+            android:textSize="15sp" />
+
+        <CheckBox
+            android:id="@+id/cb_dukpt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="5dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/used_key_index" />
+
+        <EditText
+            android:id="@+id/et_key_index"
+            style="@style/et_style" />
+    </LinearLayout>
+
+    <TextView
+        style="@style/tv_style"
+        android:text="@string/plaintext" />
+
+    <EditText
+        android:id="@+id/plain_data"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_rect"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp" />
+
+    <TextView
+        style="@style/tv_style"
+        android:layout_marginTop="10dp"
+        android:text="@string/cipher_text" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/bg_rect"
+        android:fadingEdge="vertical"
+        android:scrollbars="vertical">
+
+        <TextView
+            android:id="@+id/enc_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp"
+            android:textSize="18sp" />
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/current_ksn_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="2dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/current_used_ksn" />
+
+        <EditText
+            android:id="@+id/et_current_ksn_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:inputType="textCapCharacters"
+            android:longClickable="false"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:textSize="18sp"
+            tools:text="ABCDEF01234567891234" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ksn_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+
+        android:layout_marginEnd="2dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/next_used_ksn" />
+
+        <EditText
+            android:id="@+id/et_ksn_value"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:clickable="false"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:inputType="textCapCharacters"
+            android:longClickable="false"
+            android:maxLength="20"
+            android:maxLines="1"
+            android:textSize="18sp"
+            tools:text="ABCDEF01234567891234" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/ll_style"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="0dp">
+
+        <Button
+            android:id="@+id/tak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tak" />
+
+        <Button
+            android:id="@+id/tdk"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/tdk" />
+
+        <Button
+            android:id="@+id/tpk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tpk" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_inc_ksn_layout"
+        style="@style/ll_style"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="0dp"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/btn_inc_ksn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAllCaps="false"
+            android:text="@string/inc_ksn" />
+    </LinearLayout>
+</LinearLayout>

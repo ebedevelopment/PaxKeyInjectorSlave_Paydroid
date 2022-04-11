@@ -1,0 +1,109 @@
+apply plugin: 'com.android.application'
+
+def static release_time() {
+    return new Date().format("yyyyMMdd", TimeZone.getTimeZone("UTC"))
+}
+
+def loadSigningConfigs() {
+    def Properties props = new Properties()
+    def propFile = file('../signing.properties')
+    if (propFile.canRead()) {
+        props.load(new FileInputStream(propFile))
+        if (props != null && props.containsKey('RELEASE_STORE_FILE') && props.containsKey('RELEASE_STORE_PASSWORD') &&
+                props.containsKey('RELEASE_KEY_ALIAS') && props.containsKey('RELEASE_KEY_PASSWORD')) {
+            android.signingConfigs.release.storeFile = file(props['RELEASE_STORE_FILE'])
+            android.signingConfigs.release.storePassword = props['RELEASE_STORE_PASSWORD']
+            android.signingConfigs.release.keyAlias = props['RELEASE_KEY_ALIAS']
+            android.signingConfigs.release.keyPassword = props['RELEASE_KEY_PASSWORD']
+        } else {
+            android.buildTypes.release.signingConfig = null
+        }
+    } else {
+        android.buildTypes.release.signingConfig = null
+    }
+}
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "cn.pax.ood.keyinjection"
+        minSdkVersion 21
+        targetSdkVersion 28
+        //保持verversionCode 和 versionName 中的版本号一致，方便管理
+        versionCode 3
+        versionName "1.0.03" + "_" + release_time()
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        ndk{
+            abiFilters 'armeabi-v7a'
+        }
+        sourceSets {
+            main {
+                java.srcDirs = ['src/main/java']
+
+//            jniLibs.srcDirs = ['libs']
+            }
+        }
+    }
+
+    //签名
+    signingConfigs {
+        debug {
+        }
+        release {
+        }
+    }
+
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled true
+            zipAlignEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            loadSigningConfigs()
+            //签名
+            signingConfig signingConfigs.release
+
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def type = ""
+                    if (output.name == 'debug') {
+                        type = "_debug"
+                    }
+                    def fileName = "KeyInject_V${defaultConfig.versionName}${type}.apk"
+                    output.outputFileName = fileName
+                }
+            }
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation rootProject.ext.support_v7
+    implementation rootProject.ext.constraint_layout
+    implementation rootProject.ext.blankj_utilcode
+
+    implementation rootProject.ext.dagger
+    annotationProcessor rootProject.ext.dagger_compiler
+    implementation rootProject.ext.dagger_android
+    implementation rootProject.ext.dagger_android_support
+    annotationProcessor rootProject.ext.dagger_android_processor
+
+    testImplementation rootProject.ext.test_implementation
+    androidTestImplementation rootProject.ext.android_test_runner
+    androidTestImplementation rootProject.ext.android_test_espresso
+
+//    implementation project(':sdk')
+}

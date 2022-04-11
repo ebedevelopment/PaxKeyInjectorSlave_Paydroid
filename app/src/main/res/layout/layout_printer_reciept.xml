@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffffff">
+
+    <TextView
+        android:id="@+id/txt_name_sn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:textSize="@dimen/printer_inject_receipt_name_10sp"
+        android:textColor="#000000"
+        android:background="#ffffffff"
+        android:text="@string/printer_name_sn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="SN: " />
+
+    <TextView
+        android:id="@+id/txt_ct_sn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:textSize="@dimen/printer_inject_receipt_ct_10sp"
+        android:textColor="#000000"
+        android:background="#ffffffff"
+        app:layout_constraintBaseline_toBaselineOf="@id/txt_name_sn"
+        app:layout_constraintStart_toEndOf="@id/txt_name_sn"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="0820134724" />
+
+    <TextView
+        android:id="@+id/txt_name_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:text="@string/printer_name_date"
+        android:textSize="@dimen/printer_inject_receipt_name_10sp"
+        android:textColor="#000000"
+        android:background="#ffffffff"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_name_sn"
+        tools:text="Date: " />
+
+    <TextView
+        android:id="@+id/txt_ct_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:textSize="@dimen/printer_inject_receipt_ct_10sp"
+        android:textColor="#000000"
+        android:background="#ffffffff"
+        app:layout_constraintBaseline_toBaselineOf="@id/txt_name_date"
+        app:layout_constraintStart_toEndOf="@id/txt_name_date"
+        app:layout_constraintTop_toBottomOf="@id/txt_name_sn"
+        tools:text="18/08/2019" />
+
+    <TextView
+        android:id="@+id/txt_name_operator1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:textSize="@dimen/printer_inject_receipt_name_10sp"
+        android:textColor="#000000"
+        android:background="#ffffffff"
+        android:text="@string/printer_name_operator1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_name_date"
+        tools:text="Operator1: " />
+
+    <TextView
+        android:id="@+id/txt_ct_operator1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:textSize="@dimen/printer_inject_receipt_name_10sp"
+        android:textColor="#000000"
+        android:background="#ffffffff"
+        app:layout_constraintBaseline_toBaselineOf="@id/txt_name_operator1"
+        app:layout_constraintStart_toEndOf="@id/txt_name_operator1"
+        app:layout_constraintTop_toBottomOf="@id/txt_name_date"
+        tools:text="K11111111" />
+
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5"/>
+    <!--<android.support.constraint.Barrier-->
+    <!--android:id="@+id/barrier"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:visibility="visible"-->
+    <!--app:barrierDirection="right"-->
+    <!--app:constraint_referenced_ids="txt_ct_sn, txt_ct_date, txt_ct_operator1"-->
+    <!--tools:visibility="visible" />-->
+
+    <TextView
+        android:id="@+id/txt_name_tmk_kcv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:textSize="@dimen/printer_inject_receipt_name_10sp"
+        android:textColor="#000000"
+        android:background="#ffffffff"
+        android:text="@string/printer_name_tmk_kcv"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="TMK KCV: " />
+
+    <TextView
+        android:id="@+id/txt_ct_tmk_kcv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:textSize="@dimen/printer_inject_receipt_ct_10sp"
+        android:textColor="#000000"
+        android:background="#ffffffff"
+        app:layout_constraintBaseline_toBaselineOf="@id/txt_name_tmk_kcv"
+        app:layout_constraintStart_toEndOf="@id/txt_name_tmk_kcv"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="123456" />
+
+    <TextView
+        android:id="@+id/txt_name_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:textSize="@dimen/printer_inject_receipt_name_10sp"
+        android:textColor="#000000"
+        android:background="#ffffffff"
+        android:text="@string/printer_name_time"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/txt_name_tmk_kcv"
+        tools:text="Time: " />
+
+    <TextView
+        android:id="@+id/txt_ct_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:textSize="@dimen/printer_inject_receipt_ct_10sp"
+        android:textColor="#000000"
+        android:background="#ffffffff"
+        app:layout_constraintBaseline_toBaselineOf="@id/txt_name_time"
+        app:layout_constraintStart_toEndOf="@id/txt_name_time"
+        app:layout_constraintTop_toBottomOf="@id/txt_name_tmk_kcv"
+        tools:text="14:35" />
+
+    <TextView
+        android:id="@+id/txt_name_operator2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:textSize="@dimen/printer_inject_receipt_name_10sp"
+        android:text="@string/printer_name_operator2"
+        android:textColor="#000000"
+        android:background="#ffffffff"
+        app:layout_constraintStart_toEndOf="@id/guideline"
+        app:layout_constraintTop_toBottomOf="@id/txt_name_time"
+        tools:text="Operator2: " />
+
+    <TextView
+        android:id="@+id/txt_ct_operator2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:textSize="@dimen/printer_inject_receipt_ct_10sp"
+        android:textColor="#000000"
+        android:background="#ffffffff"
+        app:layout_constraintBaseline_toBaselineOf="@id/txt_name_operator2"
+        app:layout_constraintStart_toEndOf="@id/txt_name_operator2"
+        app:layout_constraintTop_toBottomOf="@id/txt_name_time"
+        tools:text="T222222" />
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/printer_inject_receipt_bottom_step"
+        android:background="#ffffffff"
+        app:layout_constraintTop_toBottomOf="@id/txt_ct_operator2"/>
+</android.support.constraint.ConstraintLayout>
